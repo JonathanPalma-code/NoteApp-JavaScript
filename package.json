@@ -1,0 +1,25 @@
+{
+  "name": "note-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assert.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanPalma-code/NoteApp-JavaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanPalma-code/NoteApp-JavaScript/issues"
+  },
+  "homepage": "https://github.com/JonathanPalma-code/NoteApp-JavaScript#readme",
+  "dependencies": {
+    "http-server": "^0.12.0"
+  }
+}

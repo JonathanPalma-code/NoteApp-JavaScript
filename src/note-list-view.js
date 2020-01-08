@@ -9,7 +9,6 @@ NoteListView.prototype = (function(){
         var test = (`<li><div>${this.text.displayNotes()[count]}</div></li>`);
         final+= test;
       }
-      console.log(`<ul>${final}</ul>`);
       return `<ul>${final}</ul>`;
     }
   }

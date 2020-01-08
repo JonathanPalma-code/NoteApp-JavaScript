@@ -4,16 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src='./assert.js'></script>
+
   <script src='./src/note-model.js'></script>
-  <script src='./test/note-modelTest.js'></script>
   <script src='./src/note-list-model.js'></script>
-  <script src='./test/note-list-modelTest.js'></script>
   <script src='./src/note-list-view.js'></script>
+
+
+  <!-- Helper's script -->
+  <script src='./assert.js'></script>
+  
+  <!-- Tests -->
+  <script src='./test/note-modelTest.js'></script>
+  <script src='./test/note-list-modelTest.js'></script>
   <script src='./test/note-list-viewTest.js'></script>
+
   <title>Book Note</title>
 </head>
 <body>
-  
+  <div id='app'>Hello</div>
+  <script src='./src/note-controller.js'></script>
+  <script>
+    var note = new NoteController();
+    note.updateElement();
+  </script>
 </body>
 </html>
