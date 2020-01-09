@@ -1,22 +1,11 @@
-// (function (exports){
-//   var List = function(){
-//     emptylist = [];
-//   }
-//   List.prototype.add = function(text){
-//     emptylist.push(text);
-//   } 
-//   List.prototype.showList = function(){
-//     return emptylist; 
-//   }
-//   exports.List = List;
-// })(this);
-
 function BookNote(){
   this.list = [];
+  this.id = 0;
 }
 BookNote.prototype = (function(){
   function add(text){
-    this.list.push(text);
+    this.list.push(new NoteBook(text, this.id));
+    this.id ++;
   }
   function displayNotes(){
     return this.list;
