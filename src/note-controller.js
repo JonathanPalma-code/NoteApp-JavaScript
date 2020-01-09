@@ -8,7 +8,6 @@ NoteController.prototype = (function(){
   function updateElement(){
     var elem = document.getElementById('app');
     elem.innerHTML = this.noteListView.getHTML();
-    console.log(elem);
   }
   return{
     updateElement: updateElement
