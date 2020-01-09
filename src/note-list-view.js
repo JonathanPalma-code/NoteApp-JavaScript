@@ -6,9 +6,9 @@ NoteListView.prototype = (function(){
     var final = '';
     this.list.displayNotes().forEach(note => {
       if(note.text.length > 20){
-        final += `<li><div>${note.text.slice(0,20)}...</div></li>`;
+        final += `<li><div><a href='#notes/${note.id}'>${note.text.slice(0,20)}...</a></div></li>`;
       }else{
-        final += `<li><div>${note.text}</div></li>`;
+        final += `<li><div><a href='#notes/${note.id}'>${note.text}</a></div></li>`;
       }
     });
     return `<ul>${final}</ul>`;
