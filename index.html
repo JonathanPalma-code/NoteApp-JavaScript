@@ -24,11 +24,38 @@
   <title>Book Note</title>
 </head>
 <body>
-  <div id='app'>Hello</div>
+
+
+  <div id='app'></div>
+  <div id='note'></div>
+
+
   <script src='./src/note-controller.js'></script>
   <script>
     var note = new NoteController();
     note.updateElement();
+
+    makeUrlChangeShowNoteForCurrentPage();
+
+      function makeUrlChangeShowNoteForCurrentPage() {
+        window.addEventListener("hashchange", showNoteForCurrentPage);
+      };
+
+      function showNoteForCurrentPage() {
+        showNote(getNoteFromUrl(window.location));
+      };
+
+      function getNoteFromUrl(location) {
+        return location.hash.split("#notes/")[1];
+      };
+
+      function showNote(id) {
+        var div = document.getElementById("note")
+        console.log(id)
+
+        div.innerHTML = id;
+      };
+
   </script>
 </body>
 </html>

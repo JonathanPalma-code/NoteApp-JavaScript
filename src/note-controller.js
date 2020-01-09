@@ -1,6 +1,8 @@
 function NoteController(noteList){
   noteList = new BookNote();
-  noteList.add('Favourite drink: seltzer');
+  noteList.add('note 1');
+  noteList.add('note 2');
+  noteList.add('note 3');
   this.noteListView = new NoteListView(noteList);
 
 }
@@ -13,16 +15,3 @@ NoteController.prototype = (function(){
     updateElement: updateElement
   }
 })();
-
-
-
-// (function (exports){
-//   function NoteController(){
-//   };
-//   NoteController.prototype.updateElement = function(){
-//     var elem = document.getElementById('app')
-//     elem.innerHTML = 'howdy';
-//     console.log(elem);
-//   }
-//   exports.NoteController = NoteController;
-// })(this);
