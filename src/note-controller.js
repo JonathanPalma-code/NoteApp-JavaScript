@@ -5,6 +5,7 @@ function NoteController(noteList){
   this.noteListView = new NoteListView(noteList);
 }
 NoteController.prototype = (function(){
+
   function updateElement(elem = document.getElementById('app')){
     elem.innerHTML = this.noteListView.getHTML();
   }
@@ -29,14 +30,25 @@ NoteController.prototype = (function(){
     div.innerHTML = selectedNote.text;
   };
 
-  function logSubmit(event) {
-    console.log(event)
-    console.log(event.target.elements.textarea.value)
-    event.preventDefault()
-  }
+  // function logSubmit(event) {
+  //   event.preventDefault()
+  //   console.log(event)
+  //   console.log(event.target.elements.textarea.value)
+  //   console.log(this)
+  //   this.noteListView.list.add(event.target.elements.textarea.value.toString());
+  //   this.updateElement();
+  // }
 
   function formSubmit() {
-    window.addEventListener("submit", logSubmit);
+    // var self = this;
+    document.getElementById('text').addEventListener("submit", function() {
+      event.preventDefault()
+      console.log(event)
+      console.log(event.target.elements.textarea.value)
+      console.log(self)
+      this.noteListView.list.add(event.target.elements.textarea.value.toString());
+      this.updateElement();
+    }.bind(this));
   };
 
   return{
