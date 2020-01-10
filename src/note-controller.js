@@ -29,9 +29,19 @@ NoteController.prototype = (function(){
     div.innerHTML = selectedNote.text;
   };
 
+  function logSubmit(event) {
+    console.log(event)
+    event.preventDefault()
+  }
+
+  function formSubmit() {
+    window.addEventListener("submit", logSubmit);
+  };
+
   return{
     updateElement: updateElement,
     makeUrlChangeShowNoteForCurrentPage: makeUrlChangeShowNoteForCurrentPage,
-    showNote: showNote
+    showNote: showNote,
+    formSubmit: formSubmit
   }
 })();
