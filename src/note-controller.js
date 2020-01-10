@@ -31,6 +31,7 @@ NoteController.prototype = (function(){
 
   function logSubmit(event) {
     console.log(event)
+    console.log(event.target.elements.textarea.value)
     event.preventDefault()
   }
 
