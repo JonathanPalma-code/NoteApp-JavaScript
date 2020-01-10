@@ -9,6 +9,7 @@
   <script src='./src/note-list-model.js'></script>
   <script src='./src/note-list-view.js'></script>
   <script src='./src/single-note-view.js'></script>
+  <script src='./src/note-controller.js'></script>
 
 
   <!-- Helper's script -->
@@ -19,6 +20,7 @@
   <script src='./test/note-list-modelTest.js'></script>
   <script src='./test/note-list-viewTest.js'></script>
   <script src='./test/single-note-viewTest.js'></script>
+  <script src='./test/note-controller-test.js'></script>
 
 
   <title>Book Note</title>
@@ -26,36 +28,16 @@
 <body>
 
 
-  <div id='app'></div>
+  <div id='app'>hello</div>
   <div id='note'></div>
 
 
   <script src='./src/note-controller.js'></script>
   <script>
-    var note = new NoteController();
+    var note = new NoteController(new BookNote());
     note.updateElement();
-
-    makeUrlChangeShowNoteForCurrentPage();
-
-      function makeUrlChangeShowNoteForCurrentPage() {
-        window.addEventListener("hashchange", showNoteForCurrentPage);
-      };
-
-      function showNoteForCurrentPage() {
-        showNote(getNoteFromUrl(window.location));
-      };
-
-      function getNoteFromUrl(location) {
-        return location.hash.split("#notes/")[1];
-      };
-
-      function showNote(id) {
-        var div = document.getElementById("note")
-        console.log(id)
-
-        div.innerHTML = id;
-      };
-
+    note.makeUrlChangeShowNoteForCurrentPage();
   </script>
 </body>
 </html>
+ 
