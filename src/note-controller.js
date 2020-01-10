@@ -1,13 +1,11 @@
 function NoteController(noteList){
-  noteList.add('note 1');
-  noteList.add('note 2');
-  noteList.add('note 3');
+  noteList.add('Favourite drink: seltzer');
+  noteList.add('Favourite food: pesto');
   this.noteList = noteList
   this.noteListView = new NoteListView(noteList);
 }
 NoteController.prototype = (function(){
-  function updateElement(){
-    var elem = document.getElementById('app');
+  function updateElement(elem = document.getElementById('app')){
     elem.innerHTML = this.noteListView.getHTML();
   }
 
@@ -27,12 +25,13 @@ NoteController.prototype = (function(){
     var div = document.getElementById("note")
     console.log(note.noteList.list)
     var selectedNote = note.noteList.list.find(note => note.id == id)
-    console.log(selectedNote)
+    console.log(selectedNote.text)
     div.innerHTML = selectedNote.text;
   };
 
   return{
     updateElement: updateElement,
-    makeUrlChangeShowNoteForCurrentPage: makeUrlChangeShowNoteForCurrentPage
+    makeUrlChangeShowNoteForCurrentPage: makeUrlChangeShowNoteForCurrentPage,
+    showNote: showNote
   }
 })();

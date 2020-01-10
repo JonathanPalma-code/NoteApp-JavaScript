@@ -10,8 +10,9 @@ BookNote.prototype = (function(){
   function displayNotes(){
     return this.list;
   }
-  return{
+
+  return {
     add: add,
-    displayNotes: displayNotes
+    displayNotes: displayNotes,
   }
 })()
